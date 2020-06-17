@@ -24,30 +24,24 @@ function getResult(a,b,c){
 function getAverageMark(marks){
 	let cutMarks = [];
 	let sumMarks = 0;
-	let arrLength = 0;
-	let cutMarksLength = 0;
+	let arrLength = marks.length;
+	
     let cutMark;
-	for(let i = 0; i < marks.length; i++){
-        arrLength += i;
-	}
+	
 	if (arrLength == 0){
 		return 0;
 	}else if(arrLength > 5){
 		console.log(`Всего оценок: ${arrLength}`);
-		cutMarks = marks.slice(0,5);
-	}else {
-		cutMarks = arrLength;
+		marks = marks.slice(0,5);
 	}
 	    
-	for (cutMark of cutMarks){
+	for (cutMark of marks){
 		sumMarks += cutMark;
 	}
 	
-	for(let i = 0; i < cutMarks.length; i++){
-        cutMarksLength += i;
-	}
-	let averageMark = sumMarks / cutMarksLength;
-		return averageMark;
+	
+	return sumMarks / marks.length;
+		 
     // код для задачи №2 писать здесь
     // return averageMark;
 }
@@ -56,10 +50,10 @@ function askDrink(name,dateOfBirthday){
     // код для задачи №3 писать здесь
     // return result;
     let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
-    let user = name;
+    
     if (age > 18){
-    	return `Не желаете ли олд-фэшн, ${user}?`;
+    	return `Не желаете ли олд-фэшн, ${'name'}?`;
     }else{
-    	return `Сожалею, ${user}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+    	return `Сожалею, ${'name'}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     }
 }
