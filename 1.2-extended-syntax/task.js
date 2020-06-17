@@ -52,8 +52,8 @@ function askDrink(name,dateOfBirthday){
     let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
     
     if (age > 18){
-    	return `Не желаете ли олд-фэшн, ${'name'}?`;
+    	return `Не желаете ли олд-фэшн, ${name}?`;
     }else{
-    	return `Сожалею, ${'name'}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+    	return `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     }
 }
