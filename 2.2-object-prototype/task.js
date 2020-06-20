@@ -1,7 +1,15 @@
-String.prototype = isPalindrome() {
+String.prototype.isPalindrome = function() {
    
-}
+   const str = this;
+   let a = str.split("");
+   let b = a.reverse();
+   let c = b.join();
+  if(str.toLowerCase() === c.toLowerCase()){
 
+   console.log(str.isPalindrome());
+}
+}
+let str = "А роза упала на лапу Азора";
 
 function getAverageMark(marks) {
 	let mark; 
@@ -9,9 +17,10 @@ function getAverageMark(marks) {
     let average;
 	for(mark of marks){
     total += mark;
+}
      average = total/marks.length;
 	}
-	roundedAverage = Math.round(average);
+	let roundedAverage = Math.round(average);
 	return roundedAverage;
     // код для задачи №2 писать здесь
     // return averageMark
@@ -19,11 +28,12 @@ function getAverageMark(marks) {
 
 function checkBirthday(birthday) {
 	let now = new Date().getTime();
-	const date1 = new Date(birthday);
-	let birthday = getTime(date1);
-	let diff = now - birthday;
-	let ageSec = getFullYear(birthday);
-	let age = diff / getTime(ageSec)/31/12;
+	const birthdayTime = new Date(birthday).getTime();
+
+	let diff = now - birthdayTime;
+	const age = diff / (356.25 * 24 * 60 * 60 * 1000);
+	return age >= 18;
+	
     // код для задачи №3 писать здесь
     // return verdict
 }
