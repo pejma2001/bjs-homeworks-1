@@ -1,5 +1,5 @@
 //#1
-class PrintEditionItem {
+class PrintEditionItem() {
 	constructor(name, releaseDate, pagesCount){
 		this.name = name;
   		this.releaseDate = releaseDate;
@@ -7,13 +7,13 @@ class PrintEditionItem {
 		this.state = 100;
 		this.type = null;
 	}
-	function fix(){
+	fix(){
 		return this.state * 1.5;
 	}
 	set state(number){
-    if (state() < 0){
+    if (number < 0){
     	this.state = 0;
-    }else if(state() > 100){
+    }else if(number > 100){
     	this.state = 100;
     }else{
     	this.state = number;
@@ -62,37 +62,37 @@ class DetectiveBook extends Book{
 
 //#2----------------------------------------------------------------------------------------------
 
-class Library(name) {
+class Library() {
 	constructor(name, books){
 		this.name = name;
   		this.books = [];
 
-  		function addBook(book){
+  		addBook(book){
   			if (PrintEditionItem.state > 30){
   				this.books = "book";
   			}
   		}
-  		function findBookBy(type, value){
+  		findBookBy(type, value){
 
   		}
-  		function giveBookByName(bookName){
+  		giveBookByName(bookName){
 
   		}
 		}
 	}
 
 	//#3 -----------------------------------------------------------------------------------------------
-	class StudentLog(name){
-		function getName(name){
+	class StudentLog(){
+		getName(name){
           return name;
 		}
-		function addGrade(grade, subject){
+		addGrade(grade, subject){
 
 		}
-		function getAverageBySubject(subject){
+		getAverageBySubject(subject){
 
 		}
-		function getTotalAverage(){
+		getTotalAverage(){
 			
 		}
 
