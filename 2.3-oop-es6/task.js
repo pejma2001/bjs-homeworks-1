@@ -1,5 +1,5 @@
 //#1
-class PrintEditionItem() {
+class PrintEditionItem {
 	constructor(name, releaseDate, pagesCount){
 		this.name = name;
   		this.releaseDate = releaseDate;
@@ -30,8 +30,8 @@ class Magazine extends PrintEditionItem{
     }
 }
 class Book extends PrintEditionItem{
-	constructor(name, releaseDate, pagesCount, author){
-    	super(type)
+	constructor(name, releaseDate, pagesCount){
+    	super(type, author)
     	this.type = book;
     	this.author = author;
     }
@@ -62,39 +62,61 @@ class DetectiveBook extends Book{
 
 //#2----------------------------------------------------------------------------------------------
 
-class Library() {
+class Library {
 	constructor(name, books){
-		this.name = name;
+		this.name = "name";
   		this.books = [];
 
   		addBook(book){
   			if (PrintEditionItem.state > 30){
-  				this.books = "book";
+  				this.books = this.books.push(books);
   			}
   		}
   		findBookBy(type, value){
-
-  		}
+  			if((type in this) & (this.type[value])){
+                 return this.type[value];
+  			}else{
+  				return null;
+  			}
+            
   		giveBookByName(bookName){
-
+             for(bookName of this.books){
+             	if(bookName){
+             		return bookName;
+             		delete.this.books[bookName];
+             	}
+             }
+             	
+             }
   		}
 		}
 	}
 
 	//#3 -----------------------------------------------------------------------------------------------
-	class StudentLog(){
+	class StudentLog{
+		constructor(name){
 		getName(name){
           return name;
 		}
 		addGrade(grade, subject){
-
+            if((grade =< 5) & (grade >= 1)){
+            	return grade.length;
+            }else{
+            	console.log("Неверная оценка");
+            }
 		}
 		getAverageBySubject(subject){
-
+			let marks = 0;
+			for(let i = 1; i < grade.length; ++i){
+				marks += i;
+				this.subject = mark/addGrade();
+			}
+             
 		}
 		getTotalAverage(){
-			
+			return getAverageBySubject;
 		}
 
 
 	}
+}
