@@ -66,7 +66,7 @@ class Library {
 	constructor(name, books){
 		this.name = "name";
   		this.books = [];
-
+}
   		addBook(book){
   			if (PrintEditionItem.state > 30){
   				this.books = this.books.push(books);
@@ -78,7 +78,7 @@ class Library {
   			}else{
   				return null;
   			}
-            
+            }
   		giveBookByName(bookName){
              for(bookName of this.books){
              	if(bookName){
@@ -89,12 +89,13 @@ class Library {
              	
              }
   		}
-		}
-	}
+		
+	
 
 	//#3 -----------------------------------------------------------------------------------------------
 	class StudentLog{
 		constructor(name){
+		}
 		getName(name){
           return name;
 		}
@@ -119,4 +120,3 @@ class Library {
 
 
 	}
-}
