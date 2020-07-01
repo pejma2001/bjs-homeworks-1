@@ -31,14 +31,31 @@ function showSolutionsMessage(a, b, c){
    let result = getSolutions(a, b, c);
    console.log("Вычисляем корни квадратного уравнения " + a + " x² " + b + " x " + c);
    console.log("Значение дискриминанта: " + result.D);
-   if(result.roots == []){
-   	console.log("Уравнение не имеет вещественных корней");
-   }else if(result.roots == [x1]){
-   	console.log(`Уравнение имеет один корень ${result.roots} = значение_корня`);
-   }else{
-   	console.log("Уравнение имеет два корня. " + result.roots[0] + " = значение_корня_1, " + result.roots[1] + " = значение_корня_2");
-   }
-  
+
+  if (result.D < 0){
+    	let obj = {
+        	D: D,
+        	roots: []
+        }	
+        console.log("Уравнение не имеет вещественных корней");
+    	
+    }else if (result.D == 0){
+        x1 = -b / 2 * a;
+        obj = {
+        	D: D,
+        	roots: [x1]
+        }
+        	console.log(`Уравнение имеет один корень ${result.roots} = значение_корня`);
+       
+    }else {
+    	x1 = (-b + Math.sqrt(D)) / (2 * a);
+    	x2 = (-b - Math.sqrt(D)) / (2 * a);
+    }
+        obj = {
+    	D: D, 
+    	roots: [x1, x2] 
+    }
+    console.log("Уравнение имеет два корня. " + result.roots[0] + " = значение_корня_1, " + result.roots[1] + " = значение_корня_2");
 
 }
 //#2
@@ -53,12 +70,18 @@ let totMarks = 0;
 let avSubjMarks;
 for(let mark of data){
  totMarks += mark;
+ getAverageMark(totMarks);
 }
 
 
 }
 
 function getAverageMark(marks){
+	let allMarks = 0;
+	for(let mark of marks){
+    allMarks += mark;
+    return allMarks/marks.length;
+	}
    object.Values(data);
    data.avSubjMarks = totMarks/data.length;
 }
