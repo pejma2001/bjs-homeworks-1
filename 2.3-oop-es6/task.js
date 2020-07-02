@@ -10,19 +10,20 @@ class PrintEditionItem {
 	fix(){
 		return this.state * 1.5;
 	}
-	set state(number){
+	set state(number) {
+		
     if (number < 0){
-    	this.state = 0;
+    	this.sState = 0;
     }else if(number > 100){
-    	this.state = 100;
+    	this.sState = 100;
     }else{
-    	this.state = number;
+    	this.sState = number;
     }
 	}
 	get state(){
-		return this.state;
+		return this.sState;
 	}
-}
+};
 class Magazine extends PrintEditionItem{
     constructor(name, releaseDate, pagesCount){
     	super(type)
@@ -115,6 +116,7 @@ class Library {
              
 		}
 		getTotalAverage(){
+			
 			return getAverageBySubject;
 		}
 
