@@ -84,7 +84,7 @@ class Library {
              for(bookName of this.books){
              	if(bookName){
              		return bookName;
-             		delete.this.books[bookName];
+             		delete this.books[bookName];
              	}
              }
              	
@@ -101,7 +101,7 @@ class Library {
           return name;
 		}
 		addGrade(grade, subject){
-            if((grade =< 5) & (grade >= 1)){
+            if((grade <= 5) & (grade >= 1)){
             	return grade.length;
             }else{
             	console.log("Неверная оценка");
