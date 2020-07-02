@@ -1,62 +1,63 @@
 //Задание №1
 
-	function parseCount(x){
+function parseCount(x) {
 	const parsed = Number.parseInt(x);
-	if(parsed == NaN){
-       throw new Error ("Невалидное значение");
-	}else {
-		return parsed;
-	
+ 	   if(Number.isNaN(parsed)) {
+         throw new Error ("Невалидное значение");
+	   }else {
+	     return parsed;
+	   }
 }
-}
-try{
-function validateCount(y){
-    const parse = parseCount(y);
-}
-}
-catch{
-    if(parse == true){
-    	return parse;
-    }else{ 
-    	throw new Error ("У вас ошибка");
 
-    }
+function validateCount(y) {
+  try {
+    parseCount(y);
+  }      
+  catch(e) {
+    console.log('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
+  }
 }
 
 
 
 //Задание №2
 
-class Triangle{
-	constructor(left, right, bottom){
-    this.left = 3;
-    this.right = 3;
-    this.bottom = 6;
-	}
-	if((this.left + this.right) < bottom){
+class Triangle {
+	constructor(left, right, bottom) {
+    this.left;
+    this.right;
+    this.bottom;
+	
+
+	if(((this.left + this.right) < bottom) || this.left < this.right || this.left > this.return) {
 		throw new Error ("Треугольник с такими сторонами не существует");
 	}
-	getPerimeter(){
-		
-			return this.left + this.right + this.bottom;
-		}
+	
+	function getTriangle(a, b, c) {
+		try {
+          let figure = new Figure(5, 5, 15);
+	    }
+   
 
-	getArea(a, b, c){
-		let halfP = (a + b +c) / 2;
-		let geron = toFixed(Math.sqrt(halfP * (halfP - a) * (halfP - b) * (halfP - c)));
+        catch {
+	      throw new Error ("Ошибка! Треугольник не существует");
+	      getArea();
+	      getPerimeter();
+        }
+    }
 
+    }
+
+	getPerimeter() {
+		return this.left + this.right + this.bottom;
 	}
-	try{
-		getTriangle(a, b, c){
-        let figure = new Figure(5, 5, 15);
+
+	getArea() {
+		let halfP = getPerimeter() / 2;
+		let geron = Math.sqrt(halfP * (halfP - left) * (halfP - right) * (halfP - bottom));
+		return geron.toFixed(3);
 	}
-}
-catch{
-	throw new Error ("Ошибка! Треугольник не существует");
-	getArea();
-	getPerimeter();
-}
 
 
-
+}  
 
