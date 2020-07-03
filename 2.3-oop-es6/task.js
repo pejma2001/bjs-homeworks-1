@@ -84,7 +84,9 @@ class Library {
              for(bookName of this.books){
              	if(bookName){
              		return bookName;
-             		delete this.books[bookName];
+             		this.books.splice(bookName,1);
+             	}else {
+             		return null;
              	}
              }
              	
