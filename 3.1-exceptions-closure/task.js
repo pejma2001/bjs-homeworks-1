@@ -11,7 +11,7 @@ function parseCount(x) {
 
 function validateCount(y) {
   try {
-    parseCount(y);
+    return parseCount(y);
   }      
   catch(e) {
     return('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
@@ -24,14 +24,16 @@ function validateCount(y) {
 
 class Triangle {
 	constructor(left, right, bottom) {
-   	
+   	this.left;
+   	this.right;
+   	this.bottom;
 
-	if(((this.left + this.right) < bottom) || ((this.right + this.bottom) < left) || ((this.left + this.bottom) < right)) {
+	if(((left + right) < bottom) || ((right + bottom) < left) || ((left + bottom) < right)) {
 		throw new Error ("Треугольник с такими сторонами не существует");
 	}
 	
 	}
-`   function getTriangle(left, right, bottom) {
+    function getTriangle(left, right, bottom) {
 		try {
           let figure = new Triangle(left, right, bottom);
           return figure;
@@ -39,6 +41,8 @@ class Triangle {
    
 
         catch {
+	      
+	      let errObj = new Triangle(left, right, bottom);
 	      return("Ошибка! Треугольник не существует");
 	      getArea();
 	      getPerimeter();
