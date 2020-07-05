@@ -14,7 +14,7 @@ function validateCount(y) {
     return parseCount(y);
   }      
   catch(e) {
-    return('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
+    return(e);
   }
 }
 
@@ -24,9 +24,9 @@ function validateCount(y) {
 
 class Triangle {
 	constructor(left, right, bottom) {
-   	this.left;
-   	this.right;
-   	this.bottom;
+   	this.left = left;
+   	this.right = right;
+   	this.bottom = bottom;
 
 	if(((left + right) < bottom) || ((right + bottom) < left) || ((left + bottom) < right)) {
 		throw new Error ("Треугольник с такими сторонами не существует");
