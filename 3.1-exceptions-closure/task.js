@@ -49,19 +49,16 @@ class Triangle {
 }  
     function getTriangle(left, right, bottom) {
 		try {
-          let figure = new Triangle(left, right, bottom);
-          return figure;
+          return new Triangle(left, right, bottom); 
 	    }
    
 
         catch {
 	      
-	      let errObj = new Triangle(left, right, bottom){
-	      getArea();
-	      getPerimeter();
-	      }
-	      return("Ошибка! Треугольник не существует");
-	      
+	      return {
+	        getArea: () => "Ошибка! Треугольник не существует",
+	        getPerimeter: () => "Ошибка! Треугольник не существует"
+          };
         }
         
     }
