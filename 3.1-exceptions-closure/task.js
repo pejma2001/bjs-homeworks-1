@@ -39,7 +39,7 @@ class Triangle {
 	}
 
 	getArea() {
-		let halfP = getPerimeter() / 2;
+		let halfP = this.getPerimeter() / 2;
 		let geron = Math.sqrt(halfP * (halfP - this.left) * (halfP - this.right) * (halfP - this.bottom));
 		let str = geron.toFixed(3);
 		return parseFloat(str);
@@ -56,8 +56,8 @@ class Triangle {
         catch {
 	      
 	      return {
-	        getArea: () => "Ошибка! Неправильный треугольник",
-	        getPerimeter: () => "Ошибка! Неправильный треугольник"
+	        getArea: () => 'Ошибка! Неправильный треугольник',
+	        getPerimeter: () => 'Ошибка! Неправильный треугольник'
           };
         }
         
