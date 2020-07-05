@@ -56,10 +56,12 @@ class Triangle {
 
         catch {
 	      
-	      let errObj = new Triangle(left, right, bottom);
-	      return("Ошибка! Треугольник не существует");
+	      let errObj = new Triangle(left, right, bottom){
 	      getArea();
 	      getPerimeter();
+	      }
+	      return("Ошибка! Треугольник не существует");
+	      
         }
         
     }
