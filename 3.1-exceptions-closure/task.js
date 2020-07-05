@@ -33,6 +33,20 @@ class Triangle {
 	}
 	
 	}
+  
+	getPerimeter() {
+		return this.left + this.right + this.bottom;
+	}
+
+	getArea() {
+		let halfP = getPerimeter() / 2;
+		let geron = Math.sqrt(halfP * (halfP - this.left) * (halfP - this.right) * (halfP - this.bottom));
+		let str = geron.toFixed(3);
+		return parseInt(str, 10);
+	}
+
+
+}  
     function getTriangle(left, right, bottom) {
 		try {
           let figure = new Triangle(left, right, bottom);
@@ -48,19 +62,5 @@ class Triangle {
 	      getPerimeter();
         }
         
-    }`
-
-	getPerimeter() {
-		return this.left + this.right + this.bottom;
-	}
-
-	getArea() {
-		let halfP = getPerimeter() / 2;
-		let geron = Math.sqrt(halfP * (halfP - this.left) * (halfP - this.right) * (halfP - this.bottom));
-		let str = geron.toFixed(3);
-		return parseInt(str, 10);
-	}
-
-
-}  
+    }
 
