@@ -42,7 +42,7 @@ class Triangle {
 		let halfP = getPerimeter() / 2;
 		let geron = Math.sqrt(halfP * (halfP - this.left) * (halfP - this.right) * (halfP - this.bottom));
 		let str = geron.toFixed(3);
-		return parseInt(str, 10);
+		return parseFloat(str);
 	}
 
 
