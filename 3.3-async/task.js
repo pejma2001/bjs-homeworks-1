@@ -1,22 +1,21 @@
 class alarmClock {
 
-	constructor(alarmCollection, timerId){
+	constructor(){
 		this.alarmCollection = [];
 		this.timerId;
 	}
 	addClock(time, callback, id){
-		if(id == undefine){
+		if(id == undefined){
 			throw new Error ("Внимание! Ошибка!");
-		}else if(this.alarmCollection.find(id)){
+		}else if(this.alarmCollection.find(alarmCollection => id == alarmCollection.id)){
 			console.error("Ошибка! Такой id уже существует");
 		}else{
-			const collect = new alarmCol(id, time, callback);
-			this.alarmCollection.push(collect);
+			this.alarmCollection.push({id, time, callback});
 		}
     
     }
     removeClock(id){
-    	let current = this.alarmCollection.filter(id);
+    	let current = this.alarmCollection.filter(alarmCollection => id == alarmCollection.id);
     	this.alarmCollection.splice(current,1);
     }
 
@@ -28,7 +27,18 @@ class alarmClock {
 
     start(){
     	function checkClock(ring){
-          if()
+          if(this.timerId == undefined){
+          	function setInterval(){
+          		for(unit of this.alarmCollection){
+          			let nowTime = new Date();
+          			let timeT = nowTime.getHours() + nowTime.getMinutes();
+          			if(timeT = getCurrentFormattedTime){
+          				return addClock(callback);
+          			}
+          		}
+
+          	}
+          }
     	}
     }
 	}
