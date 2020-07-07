@@ -53,11 +53,11 @@ let avSubjMarks;
 for(let mark in data){
  totMarks += mark;
  let avMarks = getAverageMark(data[mark]);
- return avSubjMarks {
- 	data: data;
- 	avMarks: avMarks;
- 	average: getAverageMark();
-}
+ return avSubjMarks = {
+ 	data: data,
+ 	avMarks: avMarks,
+ 	average: getAverageMark()
+};
 }
 
 }
@@ -74,10 +74,10 @@ function getAverageMark(marks){
 
 //#3
 function getPersonData(secretData){
- let obj {
- 	firstName = getDecodedValue(aaa);
- 	lastName = getDecodedValue(bbb);
- }
+ let obj = {
+ 	firstName = getDecodedValue(aaa),
+ 	lastName = getDecodedValue(bbb)
+ };
 }
 function getDecodedValue(secret){
 let result = getPersonData(secretData);
