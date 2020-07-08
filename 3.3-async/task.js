@@ -21,25 +21,37 @@ class alarmClock {
 
     getCurrentFormattedTime(){
     	let now = new Date();
-    	let time = now.getHours() + now.getMinutes();
-    	return time;
+    	let hour = now.getHours();
+    	let min = now.getMinutes();
+    	if(hour < 10){
+           hour = 0 + hour;
+    	}
+    	
+    	if(min < 10){
+           min = 0 + min;
+    	}
+    	return (hour + " : " + min);
     }
 
     start(){
-    	function checkClock(ring){
-          if(this.timerId == undefined){
-          	function setInterval(){
-          		for(unit of this.alarmCollection){
-          			let nowTime = new Date();
-          			let timeT = nowTime.getHours() + nowTime.getMinutes();
-          			if(timeT = getCurrentFormattedTime){
-          				return addClock(callback);
-          			}
-          		}
+    	checkClock((ring) => {
+          if(getCurrentFormattedTime() == alarmClock.time){
+          	return alarmClock.callback;
+          }
+        }
+        if(alarmClock.timerId == undefined){
+          alarmClock.timerId = function setInterval(
+          
+          	let callback() {
+          		for(alarm of alarmClock.alarmCollection){
+          			checkClock(alarm);
+          		},
+          		1000
+             )  
 
           	}
           }
-    	}
-    }
-	}
+          	
+          		
+          		
 	
