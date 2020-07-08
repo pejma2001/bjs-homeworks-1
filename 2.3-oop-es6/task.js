@@ -70,15 +70,18 @@ class Library {
 }
   		addBook(book){
   			if (PrintEditionItem.state > 30){
-  				this.books = this.books.push(books);
+  				this.books.push(book);
   			}
   		}
   		findBookBy(type, value){
-  			if((type in this) & (this.type[value])){
-                 return this.type[value];
+  			for(lib in this.books){
+  				if(lib == value){
+                 return lib;
   			}else{
   				return null;
   			}
+  			}
+  			
             }
   		giveBookByName(bookName){
              for(bookName of this.books){
