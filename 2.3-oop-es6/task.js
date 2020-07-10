@@ -69,8 +69,9 @@ class Library {
   		this.books = [];
 }
   		addBook(book){
-  			if (PrintEditionItem.state > 30){
-  				this.books.push(book);
+  			const test = new PrintEditionItem(book);
+  			if (this.state > 30){
+  				return this.books.push(book);
   			}
   		}
   		findBookBy(type, value){
