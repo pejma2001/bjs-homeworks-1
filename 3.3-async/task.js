@@ -30,26 +30,40 @@ class alarmClock {
     	if(min < 10){
            min = 0 + min;
     	}
-    	return (hour + " : " + min);
+    	return (hour + ":" + min);
     }
 
     start(){
-    	checkClock((ring) => {
-          if(getCurrentFormattedTime() == alarmClock.time){
-          	return alarmClock.callback;
+    	let checkClock = ring => {
+          if(this.getCurrentFormattedTime() == alarmClock.time){
+          	alarmClock.callback();
           }
         }
-        if(alarmClock.timerId == undefined){
-          alarmClock.timerId = function setInterval(
-          
-          	let callback() {
-          		for(alarm of alarmClock.alarmCollection){
-          			checkClock(alarm);
-          		},
-          		1000
-             )  
+        if(this.alarmClock.timerId == undefined){
+           this.timerId = setInterval(() => this.alarmCollection(alarm => checkClock(alarm)), 1000);
+
+             }
 
           	}
+
+
+    stop(){
+    	if(this.timerId){
+    		clearInterval();
+    		delete this.timerId;
+    	}
+    }
+
+    printAlarms(){
+    	this.id.forEach(element => console.log(element));
+    	this.time.forEach(element2 => console.log(element2));
+    }
+
+    clearAlamrs(){
+    	stop();
+        delete this.alarmCollection;
+    }
+
           }
           	
           		
