@@ -70,20 +70,21 @@ class Library {
 }
   		addBook(book){
   			const test = new PrintEditionItem(book);
-  			if (this.state > 30){
+  			if (book.state > 30){
   				return this.books.push(book);
   			}
   		}
-  		findBookBy(type, value){
-  			for(lib in this.books){
-  				if(lib == value){
-                 return lib;
+  		 findBookBy(type, value){
+  		
+                let lib = this.books.find((item) => item.type == 'value');
+  				if(lib){
+                 return value;
   			}else{
   				return null;
   			}
   			}
   			
-            }
+            
   		giveBookByName(bookName){
              for(bookName of this.books){
              	if(bookName){
@@ -95,8 +96,8 @@ class Library {
              }
              	
              }
-  		}
-		
+  		
+		}
 	
 
 	//#3 -----------------------------------------------------------------------------------------------
