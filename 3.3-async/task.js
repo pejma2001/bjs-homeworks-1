@@ -35,12 +35,12 @@ class alarmClock {
 
     start(){
     	let checkClock = ring => {
-          if(this.getCurrentFormattedTime() == alarmClock.time){
-          	alarmClock.callback();
+          if(this.getCurrentFormattedTime() == ring.time){
+          	ring.callback();
           }
         }
-        if(this.alarmClock.timerId == undefined){
-           this.timerId = setInterval(() => this.alarmCollection(alarm => checkClock(alarm)), 1000);
+        if(this.timerId == undefined){
+           this.timerId = setInterval(() => this.alarmCollection.forEach(alarm => checkClock(alarm)), 1000);
 
              }
 
@@ -49,23 +49,37 @@ class alarmClock {
 
     stop(){
     	if(this.timerId){
-    		clearInterval();
-    		delete this.timerId;
+    		clearInterval(this.timerId);
+    		this.timerId = undefined;
     	}
     }
 
     printAlarms(){
-    	this.id.forEach(element => console.log(element));
-    	this.time.forEach(element2 => console.log(element2));
+    	
+    	this.alarmCollection.forEach(element2 => console.log(element2));
     }
 
     clearAlamrs(){
     	stop();
-        delete this.alarmCollection;
+        this.alarmCollection = [];
     }
 
           }
           	
-          		
+     function testCase(){
+       let alarm = new alarmClock();
+       alarm.addClock("09:00", () => console.log("Пора вставать"),1);
+       alarm.addClock("09:01", () => { console.log("Пора вставать уже!"); alarm.removeClock(2)},2);
+       alarm.addClock("09:01", () => console.log("Иди умывайся"));
+       alarm.addClock("09:02", () => {
+       	console.log("Вставай, а то проспишь!");
+       	alarm.clearAlamrs();
+       	alarm.printAlarms();
+       },3);
+       alarm.addClock("09:05", () => console.log("Вставай, а то проспишь!"),1);
+       alarm.printAlarms;
+       alarm.start();
+
+     }		
           		
 	

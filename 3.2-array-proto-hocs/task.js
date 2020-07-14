@@ -16,7 +16,7 @@ function compareArrays( arr1, arr2 ) {
 		return false;
 	}else {
         arr1.every(
-        	function compare(arr1[],index) {
+        	function (arr1[],index) {
                if(arr1[] == arr2[] || arr1.index == arr2.index) {
                	  return true;
                }else {
@@ -28,11 +28,13 @@ function compareArrays( arr1, arr2 ) {
 
 
 
+
+
 	
-}
+
 function memorize(fn, limit){
 	const innerFunc = () => "Hello";
-	return innerFunc();
+	return innerFunc;
 	
 
 }
